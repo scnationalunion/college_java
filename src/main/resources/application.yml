@@ -1,0 +1,84 @@
+spring:
+  #  cloud:
+  #    nacos:
+  #      server-addr: localhost:8848
+  #  application:
+  #    name: gulimall-product
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.92.132:3306/college?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+  redis:
+    host: 192.168.92.132
+    port: 6379
+    password:
+    lettuce:
+      pool:
+        max-active: 8  #最大连接
+        max-idle: 8   #最大空闲连接
+        min-idle: 0   #最小空闲连接
+        max-wait: 100ms #连接等待时间
+  # 配置elasticSearch的地址
+  elasticsearch:
+    rest:
+      ip: 192.168.92.132
+      port: 9200
+      scheme: http
+  #配置RabbitMq的地址
+  rabbitmq:
+    host: 192.168.92.132
+    port: 5672
+    virtual-host: /
+    username: root
+    password: root
+  servlet:
+    multipart:
+      max-file-size: 1GB
+      # 将一下properties转化成yml
+      #  spring.servlet.multipart.max-file-size=300MB
+      #  spring.servlet.multipart.max-request-size=350MB
+      max-request-size: 2GB
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+logging:
+  level:
+    com.hua.college: debug
+server:
+  port: 8088
+uploadFolder: d:\\Users\\HP\\Desktop\\temp\\testupload\\
+# 将一下properties转化成yml
+#  spring.servlet.multipart.max-file-size=300MB
+#  spring.servlet.multipart.max-request-size=350MB
+
+# 配置一下Elasticsearch
+#spring:
+#  elasticsearch:
+#    rest:  #使用rest方式
+#      uris: http://
+#    #  username: elastic
+#    #  password: changeme
+#    #  connection-timeout: 1000ms
+#    #  socket-timeout: 30000ms
+#    #  max-connection: 100
+#    #  max-connection-per-route: 100
+#    #  request-timeout: 5000ms
+#    #  max-retry-timeout: 60000ms
+#    #  path:
+#    #    home: D:\elasticsearch-7.6.2
+#    #    logs: D:\elasticsearch-7.6.2\logs
+#    #    data: D:\elasticsearch-7.6.2\data
+#    #    config: D:\elasticsearch-7.6.2\config
+#    #    repo: D:\elasticsearch-7.6.2\repo
+#    #    plugins: D:\elasticsearch-7.6.2\plugins
+#    #    bin: D:\elasticsearch-7.6.2\bin
+#    #    pid: D:\elasticsearch-7.6.2\pid
+#    #    temp: D:\elasticsearch-7.6.2\temp
+#    #    scripts: D:\elasticsearch-7.6.2\scripts
+#    #    lib: D:\elasticsearch-7.6.2\lib
+#    #    config: D:\elasticsearch-7.6.2\config
+
